@@ -75,7 +75,7 @@ print(f'np_arr // 10: {np_arr // 10}') #
 
 # numpy 배열 속성 확인
 # 1. 배열 원소 데이터 타입(dtype) 설정
-np_arr - np.array([1, 2, 3], dtype=float)
+np_arr = np.array([1, 2, 3], dtype=float)
 print(f'np_arr: {np_arr}')
 
 np_arr = np_arr.astype(np.int64)
@@ -85,11 +85,17 @@ print(f'np_arr type: {type(np_arr)}') #numpy.ndarray
 # 2. numpy 배열 속성(차원, 형태, 데이터타입) 확인
 np_arr = np.array(
     [
-        [1., 2., 3., 4., 5.]
-        [10, 20, 30, 40, 50]
+        [1., 2., 3., 4., 5.],
+        [10, 20, 30, 40, 50],
         [100, 200, 300, 400, 500]
     ]
 )
+
+'''
+np_arr: [[  1.   2.   3.   4.   5.]
+ [ 10.  20.  30.  40.  50.]
+ [100. 200. 300. 400. 500.]]
+'''
 
 # 배열 차원
 print(f'차원: {np_arr.ndim}') # 2 dim = dimension
@@ -118,6 +124,14 @@ print(f'np_arr: {np_arr}')
  [1. 1. 1.]]
 '''
 
+py_list = [[1, 2, 3], [4, 5, 6]]
+np_arr = np.ones_like(py_list, dtype=float)
+print(f'np_arr: {np_arr}')
+'''
+[[1. 1. 1.]
+ [1. 1. 1.]]
+'''
+
 # 2. zeros() & zeros_like()
 # 모든 원소가 0인 배열 만들기
 np_arr = np.zeros((3, 5), dtype=int)
@@ -132,13 +146,20 @@ py_list = [1, 2, 3]
 np_arr = np.zeros_like(py_list, dtype=int)
 print(f'np_arr: {np_arr}')
 '''
+[0 0 0]
+'''
+
+py_list = [[1, 2, 3], [4, 5, 6]]
+np_arr = np.zeros_like(py_list, dtype=int)
+print(f'np_arr: {np_arr}')
+'''
 [[0 0 0]
  [0 0 0]]
 '''
 
 3.#empty() & empty_like()
 np_arr = np.empty((3, 5), dtype=int)
-print = f'(np_arr: {np_arr})'
+print(f'np_arr: {np_arr}')
 '''
 [[0 0 0 0 0]
  [0 0 0 0 0]
@@ -148,5 +169,7 @@ print = f'(np_arr: {np_arr})'
 py_list = [1, 2, 3]
 np_arr = np.empty_like(py_list, dtype=int)
 print(f'np_arr: {np_arr}')
-
+'''
+[1 2 3]
+'''
 
