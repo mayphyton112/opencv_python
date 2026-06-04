@@ -10,3 +10,6 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+
+humanoid.mp4
+humanoid.jpg

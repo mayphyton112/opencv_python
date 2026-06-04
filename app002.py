@@ -7,31 +7,31 @@ print(cv2.__version__)
 #이미지 불러와서 출력하기 -()
 # robotImg = cv2.imread('./res/img/humanoid.jpg') #이미지 읽기
 # print(f'robotImg shape: {robotImg.shape}') #이미지 크기 -->(3715(v), 5565(h), 3(BGR))
+# robotImg = cv2.resize(robotImg, (330, 565)) #이미지 크기 변경 --->((가로, 세로), 3)
 
-# robotImg = cv2.resize(robotImg, (330, 565))
-
-# cv2.imshow('title-robotImg', robotImg)
-# cv2.waitKey(0)
-# cv2.destroyAllWindows()
+# cv2.imshow('title-robotImg', robotImg)  이미지 출력
+# cv2.waitKey(0)                          어떤 키를 누를때까지 기다려라
+# cv2.destroyAllWindows()                 모든 창을 닫아라.
+# 
 # cv2.imshow('title-robotImg', robotImg) #이미지 출력
 # cv2.waitKey(1000 * 3)                      #3초 동안 출력이 된다.
 
 ## 읽기 옵션
-robotImgColor = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_COLOR)
-robotImgColor = cv2.imread(robotImgColor, (330, 565))
+# robotImgColor = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_COLOR)
+# robotImgColor = cv2.imread(robotImgColor, (330, 565))
 
-roobotImgGray = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_GRAYSCALE)
-roobotImgGray = cv2.imread(robotImgColor, (330, 565))
+# robotImgGray = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_GRAYSCALE)
+# robotImgGray = cv2.imread(robotImgColor, (330, 565))
 
-roobotImgUnchanged = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_UNCHANGED) #ALPLA 유지
-roobotImgUnchanged = cv2.imread(roobotImgUnchanged, (330, 565))
+# robotImgUnchanged = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_UNCHANGED) #ALPLA 유지
+# robotImgUnchanged = cv2.imread(robotImgUnchanged, (330, 565))
 
-cv2.imshow('title-robotImgColor', robotImgColor)
-cv2.imshow('title-robotImgColor', roobotImgGray)
-cv2.imshow('title-robotImgColor', roobotImgUnchanged)
+# cv2.imshow('title-robotImgColor', robotImgColor)
+# cv2.imshow('title-robotImgColor', robotImgGray)
+# cv2.imshow('title-robotImgColor', robotImgUnchanged)
 
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+# cv2.waitKey(0)
+# cv2.destroyAllWindows()
 
 #동영상 불러와서 출력하기
 #OpenCV에서 동영상을 불러온다는 것은 동영상 -> 프레임 추출 -> 이미지화 -> 출력
@@ -58,7 +58,7 @@ cv2.destroyAllWindows()
 # cv2.destroyAllWindows() #윈도우 다 닫기
 
 #캠에서 동영상 실시간으로 불러오기
-'''
+
 robotMov = cv2.VideoCapture(0)
 while robotMov.isOpened(): #동영상 파일이 연결되어 있다면..
     result, frame = robotMov.read()  #result: read 성공 여부, frame: 받아온 이미지(프레임)
@@ -78,4 +78,3 @@ while robotMov.isOpened(): #동영상 파일이 연결되어 있다면..
 
 robotMov.release()
 cv2.destroyAllWindows() #윈도우 다 닫기
-'''

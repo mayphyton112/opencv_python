@@ -5,6 +5,9 @@ py_list = [1, 2, 3, 4, 5]    #구분자 있음
 print(f'py_list: {py_list}')
 
 np_arr = np.array(py_list)   #구분자 없음
+print(f'np_arr: {np_arr}')
+print(f'np_arr type: {type(np_arr)}')
+
 np_arr = np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 100])
 print(f'np_arr: {np_arr}')
 print(f'np_arr type: {type(np_arr)}') #np_arr type: <class 'numpy.ndarray'>
@@ -16,7 +19,7 @@ np_arr= np.array(
         [1, 2, 3, 4, 5], 
         [6, 7, 8, 9, 0]
     ]) #차원의 갯수에 따라 []가 늘어난다?
-print(f'np_arr: {np_arr}')
+print(f'np_arr: \n{np_arr}')
 print(f'np_arr type: {type(np_arr)}') #np_arr type: <class 'numpy.ndarray'>
 print(np_arr[1][3]) # 9
 
@@ -51,6 +54,7 @@ for arr1th in np_arr:
 # numpy 복사
 np_arr = np.array([1, 2, 3, 4, 5])
 print(f'np_arr: {np_arr}')
+
 np_arr_copy = np_arr.copy() #깊은 복사
 
 print(np_arr is np_arr_copy)                 # 메모리 주소 비교: False
@@ -62,12 +66,12 @@ print(np_arr == np_arr_copy)                 #원소(item) 마다 비교 [True, 
 np_arr = np.array([10, 20, 30, 40, 50])
 print(f'np_arr: {np_arr}')
 
-print(f'{np_arr + 10: {np_arr + 10}}') #[20 30 40 50 60]
-print(f'{np_arr - 10: {np_arr - 10}}') #[0 10 20 30 40]
-print(f'{np_arr * 10: {np_arr * 5}}') #
-print(f'{np_arr / 10: {np_arr / 10}}') #
-print(f'{np_arr % 10: {np_arr % 10}}') #
-print(f'{np_arr // 10: {np_arr // 10}}') #
+print(f'np_arr + 10: {np_arr + 10}') #[20 30 40 50 60]
+print(f'np_arr - 10: {np_arr - 10}') #[0 10 20 30 40]
+print(f'np_arr * 10: {np_arr * 5}') #
+print(f'np_arr / 10: {np_arr / 10}') #
+print(f'np_arr % 10: {np_arr % 10}') #
+print(f'np_arr // 10: {np_arr // 10}') #
 
 # numpy 배열 속성 확인
 # 1. 배열 원소 데이터 타입(dtype) 설정
@@ -79,7 +83,7 @@ print(f'np_arr: {np_arr}') # [1 2 3]
 print(f'np_arr type: {type(np_arr)}') #numpy.ndarray
 
 # 2. numpy 배열 속성(차원, 형태, 데이터타입) 확인
-np_arr = np_arr(
+np_arr = np.array(
     [
         [1., 2., 3., 4., 5.]
         [10, 20, 30, 40, 50]
