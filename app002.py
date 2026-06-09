@@ -23,7 +23,7 @@ print(cv2.__version__)
 # robotImgGray = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_GRAYSCALE)
 # robotImgGray = cv2.imread(robotImgColor, (330, 565))
 
-# robotImgUnchanged = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_UNCHANGED) #ALPLA 유지
+# robotImgUnchanged = cv2.imread('./res/img/humanoid.jpg', cv2.IMREAD_UNCHANGED) #ALPLA 유지 -투명도 옵션 유지
 # robotImgUnchanged = cv2.imread(robotImgUnchanged, (330, 565))
 
 # cv2.imshow('title-robotImgColor', robotImgColor)
@@ -59,22 +59,22 @@ print(cv2.__version__)
 
 #캠에서 동영상 실시간으로 불러오기
 
-robotMov = cv2.VideoCapture(0)
-while robotMov.isOpened(): #동영상 파일이 연결되어 있다면..
-    result, frame = robotMov.read()  #result: read 성공 여부, frame: 받아온 이미지(프레임)
-    if not result:
-        print('End FRAME')
-        break
+# robotMov = cv2.VideoCapture(0)
+# while robotMov.isOpened(): #동영상 파일이 연결되어 있다면..
+#     result, frame = robotMov.read()  #result: read 성공 여부, frame: 받아온 이미지(프레임)
+#     if not result:
+#         print('End FRAME')
+#         break
     
-    #사이즈 조정
-    frame = cv2.resize(frame, (330, 565))
+#     #사이즈 조정
+#     frame = cv2.resize(frame, (330, 565))
 
 
-    print(f'frame: {frame}')
-    cv2.imshow('title-robotFrame', frame)    #매우 빠르게 frame이 출력된다.
+#     print(f'frame: {frame}')
+#     cv2.imshow('title-robotFrame', frame)    #매우 빠르게 frame이 출력된다.
 
-    if cv2.waitKey(1) == ord('q'): #1ms 동안 기다린다. 사용자가 'q'를 입력하면 중단한다.
-        break
+#     if cv2.waitKey(1) == ord('q'): #1ms 동안 기다린다.(ms=밀리세컨드) 사용자가 'q'를 입력하면 중단한다.
+#         break
 
-robotMov.release()
-cv2.destroyAllWindows() #윈도우 다 닫기
+# robotMov.release()      # 외부자원 해제
+# cv2.destroyAllWindows() #윈도우 다 닫기
